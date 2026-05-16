@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 96%;
+    --foreground: 217 60% 11%;
+
+    --primary: 213 100% 50%;
+    --secondary: 201 67% 59%;
+    --accent: 189 82% 75%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 60% 11%;
+  }
+
+  .dark {
+    --background: 217 60% 7%;
+    --foreground: 210 40% 98%;
+    --card: 217 60% 11%;
+  }
+}
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+.font-headline {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+}
+
+.font-label {
+  font-family: "Inter", sans-serif;
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .dark .glass-card {
+    background: rgba(10, 25, 47, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .ambient-glow {
+    background: radial-gradient(
+      circle at center,
+      rgba(78, 168, 222, 0.15) 0%,
+      rgba(240, 244, 248, 0) 70%
+    );
+  }
+
+  .text-glow-gradient {
+    background: linear-gradient(135deg, #0072ff 0%, #4ea8de 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
